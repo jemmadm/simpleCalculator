@@ -1,5 +1,7 @@
 public class SimpleCalculator {
 
+    double numberInMemory;
+
     public double addition(double a, double b) {
         return a + b;
     }
@@ -16,7 +18,6 @@ public class SimpleCalculator {
         for (int i = 0; i < absB; i++) {
             total += addition(absA, 0);
         }
-
         if (a < 0 ^ b < 0) {
             total = -total;
         }
@@ -33,10 +34,15 @@ public class SimpleCalculator {
             total += addition(absB, 0);
             count++;
         }
-
-        if (a<0 ^b<0){
+        if (a<0 ^ b<0){
             count = -count;
         }
         return count;
     }
+
+    public double addNumberInMemory(double number){
+        numberInMemory += number;
+        return numberInMemory;
+    }
+
 }

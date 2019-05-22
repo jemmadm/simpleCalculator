@@ -75,13 +75,39 @@ public class SimpleCalculatorTest {
         assertThat(simpleCalculator.subtraction(4,3.5)).isEqualTo(0.5);
     }
 
-//    @Test
-//    public void checkDecimalMultiplicationMethodWorks(){
-//        assertThat(simpleCalculator.multiplication(3.2, 4.2)).isEqualTo(13.44);
-//    }
-//
+    @Test
+    public void checkDecimalMultiplicationMethodWorks(){
+        assertThat(simpleCalculator.multiplication(3.2, 4.2)).isEqualTo(13.44);
+    }
+
 //    @Test
 //    public void checkDecimalDivisionMethodWorks(){
-//        assertThat(simpleCalculator.division(10.5,5.5)).isEqualTo(2);
+//        assertThat(simpleCalculator.division(10.5,5.5)).isEqualTo(1.91);
 //    }
+
+    @Test
+    public void checkStoreNumberInMemoryMethodWorks(){
+        assertThat(simpleCalculator.addNumberInMemory(3)).isEqualTo(3);
+        assertThat(simpleCalculator.addNumberInMemory(3)).isEqualTo(6);
+    }
+
+    @Test
+    public void additionAndStoringNumber(){
+        assertThat(simpleCalculator.addNumberInMemory(simpleCalculator.addition(1,1))).isEqualTo(2);
+    }
+
+    @Test
+    public void subtractionAndStoringNumber(){
+        assertThat(simpleCalculator.addNumberInMemory(simpleCalculator.subtraction(2,1))).isEqualTo(1);
+    }
+
+    @Test
+    public void multiplicationAndStoringNumber(){
+        assertThat(simpleCalculator.addNumberInMemory(simpleCalculator.multiplication(2,2))).isEqualTo(4);
+    }
+
+    @Test
+    public void divisionAndStoringNumber(){
+        assertThat(simpleCalculator.addNumberInMemory(simpleCalculator.division(4,2))).isEqualTo(2);
+    }
 }
